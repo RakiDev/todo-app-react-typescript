@@ -1,6 +1,6 @@
 import { EventHandler, FC, useState } from "react";
 import Task from './Task';
-import { AiOutlinePlusSquare } from 'react-icons/ai';
+import { TiPlus } from 'react-icons/ti';
 import { nanoid } from "nanoid";
 
 const Form: FC = () => {
@@ -34,13 +34,19 @@ const Form: FC = () => {
     return (
         <main className="main_frame">
             <div className="form">
-                <input type="text" value={task} onChange={handleChange}/>
-                <button onClick={addTask}>
-                    <AiOutlinePlusSquare />
+                <input 
+                    type="text" 
+                    className="form_input" 
+                    value={task} 
+                    onChange={handleChange}
+                    placeholder="Add New Task..."
+                />
+                <button className="form_button" onClick={addTask}>
+                    <TiPlus />
                 </button>
             </div>
 
-            <div className="taskItemsList">
+            <div className="task_items_list">
                 <ul>
                     {taskItems.map((item) => 
                         <Task

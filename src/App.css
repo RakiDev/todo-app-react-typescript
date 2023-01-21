@@ -1,13 +1,63 @@
+
 html {
   font-size: 16px;
+  font-family: poppins, sans-serif;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;  
+  overflow: hidden;
 }
 
 .App {
+  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
   width: 80%;  
+  font-size: 3rem;
+  box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #fff;
+  border-radius: 0.4rem;
 }
 
-.main_frame {
 
+
+.form {
+  display: inline-flex;
+  padding: 2rem;
+  border-radius: 5px;
+  background: white;
+  width: 100%;
+  height: 10rem;
+}
+
+.form_input {
+  outline: none;
+  width: 70%;
+  border: none;
+}
+
+.form_button {
+  display: flex;
+  width: 30%;
+  height: auto;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+
+.form_button:hover {
+  background-color: #cacaca;
+}
+
+.task_item_list {
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.task_item_li {
+  display: inline-flex;
 }

@@ -20,8 +20,12 @@ const Task: FC<TaskPropsInterface> = ({ id, value, onDelete, modTaskValue }) => 
     }
 
     return (
-        <li id={`${id}`}>
-            <input type="text" value={fieldValue} onChange={handleChange} disabled={isDisabled}/>
+        <li id={`${id}`} className="task_item_li">
+            <input type="text"
+                value={fieldValue} 
+                onChange={handleChange} 
+                disabled={isDisabled}
+            />
             <button onClick={() => {modTaskValue(id, fieldValue); setIsDisabled(true)}}>
                 <AiFillSave />
             </button>
