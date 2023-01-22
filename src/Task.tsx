@@ -27,15 +27,17 @@ const Task: FC<TaskPropsInterface> = ({ id, value, onDelete, modTaskValue }) => 
                 spellCheck={false}
                 id="focus-input"
             />
-            <button onClick={() => {modTaskValue(id, fieldValue); setIsDisabled(true)}} className="taskbutton onpressbutton onhoverbutton">
-                <AiFillSave />
-            </button>
-            <label htmlFor="focus-input" className="taskbutton onpressbutton onhoverbutton" onClick={() => setIsDisabled(false)}>
-                <BsPencilSquare />
-            </label>
-            <button onClick={() => onDelete(id)} className="taskbutton onpressbutton onhoverbutton">
-                <BsTrash />
-            </button>
+            <div className="task_buttons_container">
+                <button onClick={() => {modTaskValue(id, fieldValue); setIsDisabled(true)}} className="taskbutton onpressbutton onhoverbutton">
+                    <AiFillSave />
+                </button>
+                <label id="labelbutton" htmlFor="focus-input" className="taskbutton onpressbutton onhoverbutton" onClick={() => setIsDisabled(false)}>
+                    <BsPencilSquare />
+                </label>
+                <button onClick={() => onDelete(id)} className="taskbutton onpressbutton onhoverbutton">
+                    <BsTrash />
+                </button>
+            </div>
         </li>
     );
 }
