@@ -65,6 +65,10 @@ ul {
   top:2px;
 }
 
+#submitbutton {
+  display: none;
+}
+
 /* To-do items */
 
 label {

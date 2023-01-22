@@ -42,7 +42,7 @@ const Form: FC = () => {
 
     return (
         <main className="main_frame">
-            <div className="form">
+            <form onSubmit={(e) => e.preventDefault()} className="form">
                 <input 
                     type="text" 
                     className="form_input" 
@@ -52,9 +52,10 @@ const Form: FC = () => {
                     spellCheck={false}
                 />
                 <button className="form_button" onClick={addTask}>
+                    <input id="submitbutton" type="submit" value='' />
                     <TiPlus />
                 </button>
-            </div>
+            </form>
 
             <div className="task_items_list">
                 <ul>
