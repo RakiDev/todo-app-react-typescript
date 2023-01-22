@@ -1,11 +1,22 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import Task from './Task';
 import { TiPlus } from 'react-icons/ti';
 import { nanoid } from "nanoid";
 
+const getTaskItems = (): string[] | [] => {
+    const items: string | null = localStorage.getItem('taskItems');
+    if (items === null) return [];
+    return JSON.parse(items);
+}
+
 const Form: FC = () => {
     const [task, setTask] = useState<string>("");
-    const [taskItems, setTaskItems] = useState<string[]>([]);
+    const [taskItems, setTaskItems] = useState<string[]>(getTaskItems);
+
+    useEffect(() => {
+        localStorage.setItem('taskItems', JSON.stringify(taskItems))
+        console.log(taskItems)
+    }, [taskItems]);
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
         const newValue = e.target.value;
