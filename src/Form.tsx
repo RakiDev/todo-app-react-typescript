@@ -1,4 +1,4 @@
-import { EventHandler, FC, useState } from "react";
+import { FC, useState } from "react";
 import Task from './Task';
 import { TiPlus } from 'react-icons/ti';
 import { nanoid } from "nanoid";
@@ -40,8 +40,9 @@ const Form: FC = () => {
                     value={task} 
                     onChange={handleChange}
                     placeholder="Add New Task..."
+                    autoFocus
                 />
-                <button className="form_button" onClick={addTask}>
+                <button className="form_button onpressbutton onhoverbutton" onClick={addTask}>
                     <TiPlus />
                 </button>
             </div>
