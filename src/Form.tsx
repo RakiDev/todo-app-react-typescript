@@ -49,6 +49,7 @@ const Form: FC = () => {
                     value={task} 
                     onChange={handleChange}
                     placeholder="Add New Task..."
+                    spellCheck={false}
                 />
                 <button className="form_button" onClick={addTask}>
                     <TiPlus />
