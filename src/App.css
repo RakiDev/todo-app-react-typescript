@@ -5,10 +5,7 @@ html {
   font-weight: bold;
 }
 
-ul {
-  list-style: none;  
-  overflow: hidden;
-}
+/* Main frame */
 
 .App {
   margin-top: 5%;
@@ -21,6 +18,12 @@ ul {
 }
 
 
+/* Form (text box and button) */
+
+ul {
+  list-style: none;  
+  overflow: hidden;
+}
 
 .form {
   display: inline-flex;
@@ -46,18 +49,75 @@ ul {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  transition: all 0.4s;
+  transition: background-color 0.3s;
 }
 
 .form_button:hover {
   background-color: #cacaca;
 }
 
+.form_button:active {
+  color: white;
+  background-color:black;
+  border-width:2px;
+  position:relative;
+  top:2px;
+}
+
+/* To-do items */
+
+label {
+  display: inline-block;
+  width: 10%;
+}
+
 .task_item_list {
   padding: 2rem;
   overflow: hidden;
+  display: block;
+
 }
 
 .task_item_li {
+  padding: 2rem;
   display: inline-flex;
+  width: 100%;
+}
+
+.task_item_li input[type=text] {
+  width: 70%;
+  border: none;
+  margin-right: 0.5rem;
+}
+
+.task_item_li button {
+  width: 10%;
+}
+
+.taskbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2rem;
+  border: none;
+  cursor: pointer;
+  background-color: f0f0f0;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.taskbutton:hover {
+  background-color: #cacaca;
+}
+
+.taskbutton:active {
+  color: white;
+  background-color:black;
+  border-width:2px;
+  position:relative;
+  top:2px;
+}
+
+.taskbutton svg {
+  height: 70%;
 }
