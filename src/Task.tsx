@@ -15,7 +15,6 @@ const Task: FC<TaskPropsInterface> = ({ id, value, onDelete, modTaskValue }) => 
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
         const newValue = e.target.value;
-        if (newValue.length === 0 || newValue === '') return;
         setFieldValue(newValue);
     }
 
@@ -25,14 +24,16 @@ const Task: FC<TaskPropsInterface> = ({ id, value, onDelete, modTaskValue }) => 
                 value={fieldValue} 
                 onChange={handleChange} 
                 disabled={isDisabled}
+                spellCheck={false}
+                id="focus-input"
             />
-            <button onClick={() => {modTaskValue(id, fieldValue); setIsDisabled(true)}}>
+            <button onClick={() => {modTaskValue(id, fieldValue); setIsDisabled(true)}} className="taskbutton onpressbutton onhoverbutton">
                 <AiFillSave />
             </button>
-            <button onClick={() => setIsDisabled((prev) => !prev)} className="taskbutton">
+            <label htmlFor="focus-input" className="taskbutton onpressbutton onhoverbutton" onClick={() => setIsDisabled(false)}>
                 <BsPencilSquare />
-            </button>
-            <button onClick={() => onDelete(id)}>
+            </label>
+            <button onClick={() => onDelete(id)} className="taskbutton onpressbutton onhoverbutton">
                 <BsTrash />
             </button>
         </li>
