@@ -40,9 +40,8 @@ const Form: FC = () => {
                     value={task} 
                     onChange={handleChange}
                     placeholder="Add New Task..."
-                    autoFocus
                 />
-                <button className="form_button onpressbutton onhoverbutton" onClick={addTask}>
+                <button className="form_button" onClick={addTask}>
                     <TiPlus />
                 </button>
             </div>
