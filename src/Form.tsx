@@ -29,8 +29,6 @@ const Form: FC = () => {
         });
     }
 
-    console.log(taskItems)
-    console.log(task)
     return (
         <main className="main_frame">
             <div className="form">
