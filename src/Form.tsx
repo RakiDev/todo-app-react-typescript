@@ -47,7 +47,7 @@ const Form: FC = () => {
                     className="form_input" 
                     value={task} 
                     onChange={handleChange}
-                    placeholder="Te amo, Daniela."
+                    placeholder="Add New Task..."
                     spellCheck={false}
                 />
                 <button className="form_button" onClick={addTask}>
