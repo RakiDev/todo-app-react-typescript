@@ -15,7 +15,6 @@ const Form: FC = () => {
 
     useEffect(() => {
         localStorage.setItem('taskItems', JSON.stringify(taskItems))
-        console.log(taskItems)
     }, [taskItems]);
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
