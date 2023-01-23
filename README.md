@@ -34,5 +34,10 @@ $ npm install # or yarn
 
 Run it
 ```bash
-$ npm start # or yarn start
+$ npm run dev # or yarn run dev
+```
+
+To make a build, simply run
+```bash
+$ npm run build # or yarn run build
 ```
