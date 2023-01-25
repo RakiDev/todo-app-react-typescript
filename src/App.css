@@ -99,8 +99,8 @@ label {
 }
 
 .task_item_li button {
-  width: 40%;
-  max-height: 100px;
+  width: 30%;
+  max-height: 50px;
 }
 
 .task_buttons_container {
@@ -111,8 +111,8 @@ label {
 
 #labelbutton {
   background-color: #f0f0f0;
-  max-height: 100px;
-  width: 40%;
+  max-height: 50px;
+  width: 30%;
 }
 
 #labelbutton:hover {
@@ -185,7 +185,7 @@ label {
     padding-top: 0;
   }
 
-  .task_item_li input[type="text"] {
+  .task_item_li textarea {
     width: 100%;
   }
 
