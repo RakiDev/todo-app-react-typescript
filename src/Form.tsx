@@ -32,12 +32,6 @@ const Form: FC = () => {
         setTaskItems((prevTaskItems) => prevTaskItems.filter((value, index) => index !== id));
     }
 
-    function modifyTask(id: number, taskMod: string): void {
-        setTaskItems((prevTaskItems) => {
-            prevTaskItems[id] = taskMod
-            return prevTaskItems;
-        });
-    }
 
     return (
         <main className="main_frame">
@@ -58,12 +52,12 @@ const Form: FC = () => {
 
             <div className="task_items_list">
                 <ul>
-                    {taskItems.map((item) => 
+                    {taskItems.map((item, index) => 
                         <Task
-                            id={taskItems.indexOf(item)}
+                            id={index}
                             key={nanoid(10)}
                             onDelete={deleteTask}
-                            modTaskValue={modifyTask}
+                            modTaskValue={setTaskItems}
                             value={item}
                         />
                     )}

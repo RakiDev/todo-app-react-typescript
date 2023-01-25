@@ -71,6 +71,10 @@ ul {
 
 /* To-do items */
 
+textarea {
+  resize: none;
+}
+
 label {
   display: inline-block;
   width: 10%;
