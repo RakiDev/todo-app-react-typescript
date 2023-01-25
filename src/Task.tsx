@@ -6,7 +6,7 @@ interface TaskPropsInterface {
     id: number
     value: string
     onDelete: (id: number) => void;
-    modTaskValue: (id: number, taskMod: string) => void;
+    modTaskValue: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 const Task: FC<TaskPropsInterface> = ({ id, value, onDelete, modTaskValue }) => {
@@ -24,6 +24,18 @@ const Task: FC<TaskPropsInterface> = ({ id, value, onDelete, modTaskValue }) => 
         setFieldValue(newValue);
     }
 
+    function arrCopy(array: string[], index: number, value: string): string[] {
+        const newArray = array.map((val, i) => {
+            if (i === index) return value;
+            return val;
+        });
+        return newArray;
+    }
+
+    function handleSave(): void {
+        modTaskValue((previousVal) => arrCopy(previousVal, id, fieldValue))
+    }
+
     return (
         <li id={`${id}`} className="task_item_li">
             <textarea
@@ -35,7 +47,7 @@ const Task: FC<TaskPropsInterface> = ({ id, value, onDelete, modTaskValue }) => 
                 style={{ minHeight: minHeight }}
             />
             <div className="task_buttons_container">
-                <button onClick={() => {modTaskValue(id, fieldValue); setIsDisabled(true)}} className="taskbutton onpressbutton onhoverbutton">
+                <button onClick={() => {handleSave(); setIsDisabled(true)}} className="taskbutton onpressbutton onhoverbutton">
                     <AiFillSave />
                 </button>
                 <label id="labelbutton" htmlFor="focus-input" className="taskbutton onpressbutton onhoverbutton" onClick={() => setIsDisabled(false)}>
